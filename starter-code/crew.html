@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Crew — Flight Engineer</title>
+    <style>
+      :root {
+        --bg: #071018;
+        --muted: #9aa8b6;
+        --accent: #ffffff;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: url(starter-code/assets/crew/background-crew-desktop.jpg);
+        color: var(--accent);
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 40px;
+      }
+      .topnav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 28px;
+        color: var(--muted);
+        font-family: monospace;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 480px;
+        gap: 28px;
+        align-items: center;
+        margin-top: 40px;
+      }
+      .info {
+        padding: 24px;
+      }
+      .role {
+        color: var(--muted);
+        letter-spacing: 3px;
+      }
+      .name {
+        font-size: 3.6rem;
+        font-family: "Times New Roman", serif;
+        margin: 6px 0;
+      }
+      .bio {
+        max-width: 560px;
+        color: rgba(170, 190, 205, 0.9);
+        line-height: 1.6;
+      }
+      .pager {
+        display: flex;
+        gap: 12px;
+        margin-top: 28px;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        cursor: pointer;
+      }
+      .dot.active {
+        background: white;
+      }
+      .photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .photo img {
+        width: 440px;
+        margin-top: 200px;
+        border-radius: 6px;
+      }
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .photo img {
+          width: 260px;
+        }
+        .name {
+          font-size: 2.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="topnav">
+        <a href="index.html" style="color: var(--muted); text-decoration: none"
+          >00 HOME</a
+        >
+        <a
+          href="destination-mars.html"
+          style="color: var(--muted); text-decoration: none"
+          >01 DESTINATION</a
+        >
+        <a
+          href="crew.html"
+          style="color: var(--accent); text-decoration: none; margin-left: 6px"
+          >02 CREW</a
+        >
+        <a
+          href="technology.html"
+          style="color: var(--muted); text-decoration: none"
+          >03 TECHNOLOGY</a
+        >
+      </nav>
+
+      <h4 style="color: var(--muted); letter-spacing: 4px">
+        02 &nbsp; MEET YOUR CREW
+      </h4>
+
+      <div class="hero">
+        <div class="info">
+          <div class="role">FLIGHT ENGINEER</div>
+          <h2 class="name" id="member-name">ANOUSHEH ANSARI</h2>
+          <p class="bio" id="member-bio">
+            Anousheh Ansari is an Iranian American engineer and co-founder of
+            Prodea Systems. Ansari was the fourth self-funded space tourist, the
+            first self-funded woman to fly to the ISS, and the first Iranian in
+            space.
+          </p>
+
+          <div class="pager" aria-hidden="false">
+            <div class="dot" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+            <div class="dot" data-index="3"></div>
+          </div>
+        </div>
+
+        <div class="photo">
+          <img
+            id="member-photo"
+            src="starter-code/assets/crew/image-anousheh-ansari.png"
+            alt="Crew member"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const members = [
+        {
+          name: "ANOUSHEH ANSARI",
+          role: "FLIGHT ENGINEER",
+          bio: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.",
+          img: "starter-code/assets/crew/image-anousheh-ansari.png",
+        },
+        {
+          name: "DOUGLAS HURLEY",
+          role: "COMMANDER",
+          bio: "Douglas Hurley is an American engineer and former Marine Corps pilot. He served as commander on multiple missions and was part of the early crewed SpaceX missions.",
+          img: "starter-code/assets/crew/image-douglas-hurley.png",
+        },
+        {
+          name: "MARK SHUTTLEWORTH",
+          role: "PILOT",
+          bio: "Mark Shuttleworth is a South African entrepreneur and space tourist, known for being the founder of Canonical and funding private spaceflight.",
+          img: "starter-code/assets/crew/image-mark-shuttleworth.png",
+        },
+        {
+          name: "VICTOR GLOVER",
+          role: "SPECIALIST",
+          bio: "Victor Glover is an American naval aviator and engineer who served as a pilot on recent crewed missions.",
+          img: "starter-code/assets/crew/image-victor-glover.png",
+        },
+      ];
+
+      const dots = document.querySelectorAll(".dot");
+      const nameEl = document.getElementById("member-name");
+      const bioEl = document.getElementById("member-bio");
+      const photoEl = document.getElementById("member-photo");
+
+      function showMember(i) {
+        const m = members[i];
+        nameEl.textContent = m.name;
+        bioEl.textContent = m.bio;
+        photoEl.src = m.img;
+        dots.forEach((d) => d.classList.remove("active"));
+        dots[i].classList.add("active");
+      }
+
+      dots.forEach((d) =>
+        d.addEventListener("click", () => showMember(Number(d.dataset.index)))
+      );
+      showMember(0);
+    </script>
+  </body>
+</html>

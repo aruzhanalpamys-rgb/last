@@ -1,0 +1,68 @@
+.homepage {
+  background-image: url("assets/home/background-home-desktop.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+}
+.home-main {
+  display: flex;
+  color: white;
+  position: absolute;
+  right: 0;
+  gap: 50px;
+  top: 40px;
+  background-color: rgba(128, 128, 128, 0.636);
+  padding: 20px 200px 20px 100px;
+}
+.home-main span {
+  padding-right: 10px;
+}
+.home-main a {
+  margin: 0;
+}
+.main-info {
+  position: absolute;
+  bottom: 200px;
+  display: flex;
+  gap: 600px;
+}
+.space {
+  color: white;
+  width: 400px;
+}
+.space h1 {
+  font-size: 120px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.space span {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.634);
+  word-spacing: 14px;
+}
+.space p {
+  line-height: 2;
+}
+.btn button {
+  padding: 130px 100px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  font-weight: 200;
+  font-size: 20px;
+  letter-spacing: 2px;
+}

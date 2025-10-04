@@ -1,0 +1,75 @@
+.homepage {
+  background-image: url("assets/home/background-home-desktop.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+}
+.home-main {
+  display: flex;
+  color: white;
+  position: absolute;
+  right: 0;
+  gap: 50px;
+  top: 40px;
+  background-color: rgba(128, 128, 128, 0.636);
+  padding: 20px 200px 20px 100px;
+}
+.home-main span {
+  padding-right: 10px;
+}
+.home-main p {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  gap: 300px;
+}
+.mars img {
+}
+.mars p {
+  color: white;
+  margin-top: 160px;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+.info {
+  width: 500px;
+  color: white;
+  margin-top: 200px;
+}
+.info h1 {
+  font-size: 100px;
+  margin: 0;
+}
+.info p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.624);
+  line-height: 2;
+}
+.rows {
+  display: flex;
+  gap: 100px;
+}
+.time p {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+}
