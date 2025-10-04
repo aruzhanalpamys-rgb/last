@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Destination — Mars</title>
+    <style>
+      :root {
+        --bg: #060812;
+        --muted: #9aa8b6;
+        --accent: #ffffff;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: url(starter-code/assets/destination/background-destination-desktop.jpg);
+        color: var(--accent);
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 40px;
+      }
+      .topnav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 28px;
+        color: var(--muted);
+        font-family: monospace;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        align-items: center;
+        margin-top: 40px;
+      }
+      .planet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .planet img {
+        width: 60%;
+        max-width: 420px;
+      }
+      .details {
+        padding: 24px;
+      }
+      .tabs {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .tabs a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .title {
+        font-size: 6rem;
+        font-family: "Times New Roman", serif;
+        margin: 12px 0;
+      }
+      .desc {
+        max-width: 520px;
+        color: rgba(170, 190, 205, 0.9);
+        line-height: 1.6;
+      }
+      .meta {
+        display: flex;
+        gap: 32px;
+        margin-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        padding-top: 24px;
+      }
+      .meta .block {
+        flex: 1;
+      }
+      .meta .value {
+        font-size: 1.6rem;
+      }
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .planet img {
+          width: 260px;
+        }
+        .title {
+          font-size: 3.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="topnav">
+        <a href="index.html" style="color: var(--muted); text-decoration: none"
+          >00 HOME</a
+        >
+        <a
+          href="destination.html"
+          style="color: var(--accent); text-decoration: none; margin-left: 6px"
+          >01 DESTINATION</a
+        >
+        <a href="crew.html" style="color: var(--muted); text-decoration: none"
+          >02 CREW</a
+        >
+        <a
+          href="technology.html"
+          style="color: var(--muted); text-decoration: none"
+          >03 TECHNOLOGY</a
+        >
+      </nav>
+
+      <h4 style="color: var(--muted); letter-spacing: 4px">
+        01 &nbsp; PICK YOUR DESTINATION
+      </h4>
+
+      <div class="hero">
+        <div class="planet">
+          <img
+            src="starter-code/assets/destination/image-mars.png"
+            alt="Mars image"
+          />
+        </div>
+        <div class="details">
+          <div class="tabs">
+            <a href="#">MOON</a>
+            <a
+              href="#"
+              style="border-bottom: 3px solid white; padding-bottom: 6px"
+              >MARS</a
+            >
+            <a href="#">EUROPA</a>
+            <a href="#">TITAN</a>
+          </div>
+          <h1 class="title">MARS</h1>
+          <p class="desc">
+            Don't forget to pack your hiking boots. You'll need them to tackle
+            Olympus Mons, the tallest planetary mountain in our solar system.
+            It's two and a half times the size of Everest!
+          </p>
+
+          <div class="meta">
+            <div class="block">
+              <div
+                style="
+                  color: var(--muted);
+                  letter-spacing: 2px;
+                  font-size: 0.8rem;
+                "
+              >
+                AVG. DISTANCE
+              </div>
+              <div class="value">225 MIL. KM</div>
+            </div>
+            <div class="block">
+              <div
+                style="
+                  color: var(--muted);
+                  letter-spacing: 2px;
+                  font-size: 0.8rem;
+                "
+              >
+                EST. TRAVEL TIME
+              </div>
+              <div class="value">9 MONTHS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
